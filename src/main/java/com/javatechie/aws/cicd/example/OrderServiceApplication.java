@@ -24,6 +24,11 @@ public class OrderServiceApplication {
         return orderDao.getOrders().stream().
                 sorted(Comparator.comparing(Order::getPrice)).collect(Collectors.toList());
     }
+    
+    @GetMapping("/health")
+    public String helloworld(){
+        return "Hello World route!!";
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(OrderServiceApplication.class, args);
